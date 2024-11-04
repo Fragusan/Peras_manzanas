@@ -106,6 +106,9 @@ public class juego {
                 break;
             case 1:
                 //ingresa un intento
+                if(entrada.getText().isEmpty() || entrada.getText().isBlank()){
+                    err.notVacio();
+                }
                 if(Main.ultimaEntrada.equals(Main.secreto) ){
                     ganaste();
                 }
@@ -139,7 +142,7 @@ public class juego {
     public static int hayManzanas(String entrada){
 
         int manzanas=0;
-        for (int i = 0; i < Main.level-1; i++) {
+        for (int i = 0; i < Main.level; i++) {
             if(entrada.charAt(i) == Main.secreto.charAt(i)){
                 manzanas++;
             }
@@ -154,7 +157,7 @@ public class juego {
 
     public static  int hayPeras(String entrada){
         int peras=0;
-        for (int i = 0; i < Main.level-1; i++) {
+        for (int i = 0; i < Main.level; i++) {
             if(entrada.charAt(i) != Main.secreto.charAt(i) &&
                 Main.secreto.contains(String.valueOf(entrada.charAt(i)))){
                 boolean yaEnManzana = entrada.charAt(i) == Main.secreto.charAt(i);

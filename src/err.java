@@ -66,4 +66,27 @@ public class err {
         }
     }
 
+    public static  void notVacio() {
+        ImageIcon alert = new ImageIcon("C:/Users/fragu/IdeaProjects/Peras_manzanas/out/production/Peras_manzanas/img/alert.png");
+
+        String[] btn = {"Entendido"};
+
+        int option = JOptionPane.showOptionDialog(
+                null,                                // Componente padre
+                "El ingreso no\npuede quedar en blanco", // Mensaje (String)
+                "Advertencia",                       // Título del cuadro de diálogo
+                JOptionPane.DEFAULT_OPTION,          // Tipo de opción
+                JOptionPane.PLAIN_MESSAGE,           // Tipo de mensaje
+                alert,                  // Icono personalizado
+                btn,                            // Botón personalizado
+                btn[0]                          // Botón predeterminado
+        );
+
+        if(option == 0){
+            Main.intentos++;
+            Main.puntaje = Main.puntaje/8;
+            juego.play(false);
+        }
+    }
+
 }
