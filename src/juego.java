@@ -41,7 +41,7 @@ public class juego {
                 } else {
                     super.processKeyEvent(ev);
                 }
-            };
+            }
 
         };
 
